@@ -46,7 +46,8 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           script: |
-            # Créer le fichier .htpasswd à partir du secret GitHub
-            echo "${{ secrets.SECRET_FILE }}" > $HOME/www/.htpasswd
-            chmod 600 $HOME/www/.htpasswd
-            echo ".htpasswd file has been created and secured."
+            cd $HOME/www/atelier1
+            rm -f .htpasswd
+            cat > .htpasswd << 'EOL'
+            ${{ secrets.MY_SECRET_FILE_CONTENT }}
+            EOL
