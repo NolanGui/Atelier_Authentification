@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
     <h1>Atelier authentification par Session</h1>
-    <h3>Connectez-vous avec les identifiants appropriés pour accéder aux pages respectives :</h3>
+    <h3>La page <a href="page_admin.php">page_admin.php</a> est inaccéssible tant que vous ne vous serez pas connecté avec le login 'admin' et mot de passe 'secret'</h3>
     <ul>
         <li><strong>Admin :</strong> admin / secret</li>
         <li><strong>User :</strong> user / utilisateur</li>
