@@ -1,4 +1,4 @@
 AuthName "Accès protégé"
 AuthType Basic
-AuthUserFile /home/nolanguiziou/www/.htpasswd
+AuthUserFile /home/nolanguiziou/www/atelier1/.htpasswd
 Require valid-user
