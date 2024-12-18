@@ -2,8 +2,8 @@
 // Démarrer la session
 session_start();
 
-// Vérifier si l'utilisateur est authentifié en tant qu'utilisateur
-if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'user') {
+// Vérifier si l'utilisateur s'est bien connecté
+if (!isset($_SESSION['loggedin']) || $_SESSION['user_type'] !== ('user')) {
     header('Location: index.php');
     exit();
 }

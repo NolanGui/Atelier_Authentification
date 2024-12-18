@@ -2,11 +2,11 @@
 // Démarrer la session
 session_start();
 
-// Vérifier si l'utilisateur est authentifié en tant qu'admin
-if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
+if (!isset($_SESSION['loggedin']) || $_SESSION['user_type'] !== ('admin')) {
     header('Location: index.php');
     exit();
 }
+?>
 ?>
 
 <!DOCTYPE html>
