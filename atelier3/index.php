@@ -44,13 +44,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <h1>Atelier authentification par Session</h1>
     <h3>La page <a href="page_admin.php">page_admin.php</a> est inaccéssible tant que vous ne vous serez pas connecté avec le login 'admin' et mot de passe 'secret'</h3>
-    <ul>
-        <li><strong>Admin :</strong> admin / secret</li>
-        <li><strong>User :</strong> user / utilisateur</li>
-    </ul>
-    <?php if (isset($error)): ?>
-        <p style="color: red;"><?php echo htmlspecialchars($error); ?></p>
-    <?php endif; ?>
     <form method="POST" action="">
         <label for="username">Nom d'utilisateur :</label>
         <input type="text" id="username" name="username" required>
