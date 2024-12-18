@@ -1,7 +1,5 @@
 name: Industrialisation continue sur le serveur Alwaysdata
-
 on: push
-
 jobs:
   Connexion:
     runs-on: ubuntu-latest
@@ -14,7 +12,6 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           script: |
             cd $HOME/www/
-
   Copy:
     needs: Connexion
     runs-on: ubuntu-latest
@@ -31,7 +28,7 @@ jobs:
             git clone https://github.com/${{ github.repository }}.git
             # Vérifier si le répertoire de destination existe
             if [ "$(ls -A ./www)" ]; then
-              rsync -r ./$last_directory/ ./www
+              rsync -r --delete ./$last_directory/ ./www
               rm -rf ./$last_directory
             else
               echo "Le répertoire flask de destination sur votre serveur n'existe pas"
