@@ -20,9 +20,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($username === 'admin' && $password === 'secret') {
         $authToken = bin2hex(random_bytes(16));
         setcookie('authToken', $authToken, time() + 60, '/', '', false, true); // Cookie valable 1 minute (60 secondes)
-
         header('Location: page_admin.php'); // L'utilisateur est dirigé vers la page home.php
         exit();
+
+        elseif ($username === 'user' && $password === 'utilisateur') {
+            $authtoken = bin2hex(random_bytes(16));
+            setcookie('authToken', $authtoken, time() + 60, '/', '', true, true);
+            header('Location: page_user.php');
+            exit();
     } else {
         $error = "Nom d'utilisateur ou mot de passe incorrect.";
     }
